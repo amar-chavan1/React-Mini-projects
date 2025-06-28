@@ -1,0 +1,458 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;800&display=swap');
+
+/* Base Styles */
+body {
+  margin: 0;
+  font-family: 'Inter', sans-serif;
+  transition: background-color 0.3s ease;
+}
+
+.app-container {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #1d4ed8, #8b5cf6, #ec4899);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+  box-sizing: border-box;
+  transition: background 0.3s ease;
+}
+
+.todo-card {
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 1.5rem;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  width: 100%;
+  max-width: 32rem;
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease, box-shadow 0.3s ease;
+  border: 1px solid #f3f4f6;
+}
+
+.todo-card:hover {
+  transform: scale(1.005);
+}
+
+.card-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 2rem;
+}
+
+.todo-title {
+  font-size: 2.25rem;
+  font-weight: 800;
+  text-align: center;
+  color: #1f2937;
+  letter-spacing: -0.025em;
+  flex-grow: 1;
+}
+
+/* --- THEME TOGGLE SWITCH STYLES --- */
+.theme-toggle-button {
+  width: 3.5rem; /* Width of the switch track */
+  height: 1.75rem; /* Height of the switch track */
+  background-color: #e5e7eb; /* Light grey track for light mode */
+  border: 1px solid #d1d5db;
+  border-radius: 9999px; /* Pill shape */
+  position: relative;
+  cursor: pointer;
+  transition: background-color 0.3s ease, border-color 0.3s ease, transform 0.2s;
+  padding: 0; /* Remove padding inherited from previous styles */
+  display: flex; /* To center the handle */
+  align-items: center; /* To center the handle vertically */
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.1); /* Subtle inner shadow */
+  outline: none; /* Remove default focus outline */
+}
+
+.theme-toggle-button:hover {
+  transform: scale(1.02);
+  /* No change in background color on hover in light mode,
+     as the handle will move and button color will change in dark mode */
+}
+.theme-toggle-button:active {
+  transform: scale(0.98);
+}
+.theme-toggle-button:focus-visible { /* For keyboard navigation */
+    box-shadow: 0 0 0 3px rgba(96, 165, 250, 0.5);
+}
+
+
+.toggle-switch-handle {
+  width: 1.5rem; /* Size of the circular handle */
+  height: 1.5rem;
+  background-color: #ffffff; /* White handle */
+  border-radius: 50%;
+  position: absolute;
+  left: 0.125rem; /* Initial position (slightly off the left edge) */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2); /* Shadow for the handle */
+  transition: transform 0.3s ease-in-out, background-color 0.3s ease;
+}
+
+/* Dark Mode Styles for the Toggle Switch */
+.dark-mode .theme-toggle-button {
+  background-color: #4a5568; /* Darker track for dark mode */
+  border-color: #6b7280;
+  box-shadow: inset 0 1px 3px rgba(0, 0, 0, 0.3);
+}
+
+.dark-mode .toggle-switch-handle {
+  transform: translateX(1.75rem); /* Move handle to the right (3.5rem - 1.5rem - 2*0.125rem) */
+  background-color: #f7fafc; /* Lighter handle in dark mode */
+}
+
+/* --- END THEME TOGGLE SWITCH STYLES --- */
+
+
+@media (min-width: 768px) {
+  .todo-card {
+    padding: 2.5rem;
+  }
+  .todo-title {
+    font-size: 3rem;
+  }
+}
+
+.input-section {
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 1.5rem;
+  gap: 0.75rem;
+}
+
+@media (min-width: 640px) {
+  .input-section {
+    flex-direction: row;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+  }
+}
+
+.todo-input {
+  flex-grow: 1;
+  padding: 0.75rem;
+  border: 1px solid #d1d5db;
+  border-radius: 0.75rem;
+  outline: none;
+  font-size: 1.125rem;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  color: #1f2937;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease, color 0.3s ease;
+}
+
+.todo-input::placeholder {
+  color: #9ca3af;
+}
+
+.todo-input:focus {
+  border-color: #3b82f6;
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5);
+}
+
+.add-button {
+  padding: 0.75rem 1.5rem;
+  background-color: #2563eb;
+  color: #ffffff;
+  font-weight: 600;
+  border-radius: 0.75rem;
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  transition: background-color 0.3s, transform 0.3s;
+  border: none;
+  cursor: pointer;
+  font-size: 1.125rem;
+  outline: none;
+}
+
+.add-button:hover {
+  background-color: #1d4ed8;
+  transform: scale(1.05);
+}
+
+.add-button:active {
+  transform: scale(0.95);
+}
+
+.add-button:focus {
+  box-shadow: 0 0 0 4px rgba(96, 165, 250, 0.5);
+}
+
+.no-tasks-message {
+  text-align: center;
+  padding-top: 2.5rem;
+  padding-bottom: 2.5rem;
+}
+
+.no-tasks-icon {
+  height: 6rem;
+  width: 6rem;
+  color: #d1d5db;
+  margin-left: auto;
+  margin-right: auto;
+  margin-bottom: 1rem;
+}
+
+.no-tasks-text {
+  color: #6b7280;
+  font-size: 1.25rem;
+  font-weight: 500;
+}
+
+.todo-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.todo-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #ffffff;
+  padding: 1rem;
+  border-radius: 0.75rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  border: 1px solid #f3f4f6;
+  transition: transform 0.2s ease-in-out, background-color 0.3s ease, border-color 0.3s ease;
+}
+
+.todo-item:hover {
+  transform: scale(1.01);
+}
+
+.todo-text {
+  flex-grow: 1;
+  font-size: 1.125rem;
+  font-weight: 500;
+  transition: all 0.3s;
+  cursor: pointer;
+  color: #374151;
+}
+
+.todo-text.completed {
+  text-decoration: line-through;
+  color: #6b7280;
+  font-style: italic;
+}
+
+@media (min-width: 768px) {
+  .todo-text {
+    font-size: 1.25rem;
+  }
+}
+
+.todo-actions {
+  display: flex;
+  gap: 0.5rem;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.action-button {
+  padding: 0.5rem;
+  border-radius: 9999px;
+  transition: background-color 0.3s, transform 0.3s ease-in-out, color 0.3s ease;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  outline: none;
+}
+
+.action-button svg {
+  height: 1.5rem;
+  width: 1.5rem;
+}
+
+.complete-button {
+  background-color: #e0f2fe;
+  color: #6b7280;
+}
+.complete-button.completed {
+  background-color: #d1fae5;
+  color: #047857;
+}
+
+.complete-button:hover {
+  background-color: #e5e7eb;
+}
+.complete-button.completed:hover {
+  background-color: #a7f3d0;
+}
+
+.delete-button {
+  background-color: #fee2e2;
+  color: #dc2626;
+}
+
+.delete-button:hover {
+  background-color: #fecaca;
+}
+
+.action-button:hover {
+  transform: scale(1.1);
+}
+.action-button:active {
+  transform: scale(0.9);
+}
+
+.show-more-section {
+  display: flex;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px dashed #e5e7eb;
+}
+
+.show-more-button {
+  padding: 0.6rem 1.2rem;
+  background-color: #60a5fa;
+  color: #ffffff;
+  font-weight: 500;
+  border-radius: 0.5rem;
+  border: none;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.2s;
+  outline: none;
+}
+
+.show-more-button:hover {
+  background-color: #3b82f6;
+  transform: translateY(-2px);
+}
+
+.show-more-button:active {
+  transform: translateY(0);
+}
+
+.show-all-button {
+  background-color: #a78bfa;
+}
+
+.show-all-button:hover {
+  background-color: #8b5cf6;
+}
+
+.all-tasks-shown-message {
+  text-align: center;
+  color: #6b7280;
+  font-size: 0.9rem;
+  margin-top: 0.5rem;
+}
+
+/* Dark Mode General Styles */
+body.dark-mode {
+  background-color: #1a202c;
+}
+
+.app-container.dark-mode {
+  background: linear-gradient(to bottom right, #0f172a, #4c1d95, #831843);
+}
+
+.dark-mode .todo-card {
+  background-color: #2d3748;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.2), 0 10px 10px -5px rgba(0, 0, 0, 0.08);
+  border-color: #4a5568;
+}
+
+.dark-mode .todo-title {
+  color: #e2e8f0;
+}
+
+.dark-mode .todo-input {
+  background-color: #4a5568;
+  border-color: #6b7280;
+  color: #e2e8f0;
+}
+
+.dark-mode .todo-input::placeholder {
+  color: #a0aec0;
+}
+
+.dark-mode .add-button {
+  background-color: #4338ca;
+}
+
+.dark-mode .add-button:hover {
+  background-color: #3730a3;
+}
+
+.dark-mode .no-tasks-icon {
+  color: #4a5568;
+}
+
+.dark-mode .no-tasks-text {
+  color: #a0aec0;
+}
+
+.dark-mode .todo-item {
+  background-color: #2d3748;
+  border-color: #4a5568;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.15), 0 2px 4px -1px rgba(0, 0, 0, 0.07);
+}
+
+.dark-mode .todo-text {
+  color: #cbd5e0;
+}
+
+.dark-mode .todo-text.completed {
+  color: #a0aec0;
+}
+
+.dark-mode .complete-button {
+  background-color: #374151;
+  color: #a0aec0;
+}
+
+.dark-mode .complete-button.completed {
+  background-color: #065f46;
+  color: #a7f3d0;
+}
+
+.dark-mode .complete-button:hover {
+  background-color: #4a5568;
+}
+
+.dark-mode .complete-button.completed:hover {
+  background-color: #059669;
+}
+
+.dark-mode .delete-button {
+  background-color: #7f1d1d;
+  color: #fca5a5;
+}
+
+.dark-mode .delete-button:hover {
+  background-color: #991b1b;
+}
+
+.dark-mode .show-more-button {
+  background-color: #4f46e5;
+  border-color: #6366f1;
+}
+
+.dark-mode .show-more-button:hover {
+  background-color: #3730a3;
+}
+
+.dark-mode .show-all-button {
+  background-color: #7c3aed;
+}
+
+.dark-mode .show-all-button:hover {
+  background-color: #6d28d9;
+}
+
+.dark-mode .all-tasks-shown-message {
+  color: #a0aec0;
+}
+
+.dark-mode .show-more-section {
+  border-top-color: #4a5568;
+}
