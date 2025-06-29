@@ -1,0 +1,26 @@
+.TicketNum {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px;
+    height: 60px;
+    background: linear-gradient(145deg, #a80000 0%, #cc0000 100%);
+    color: #ffd700;
+    border-radius: 50%;
+    font-family: 'Times New Roman', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.6);
+    margin: 8px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4), 0 0 20px rgba(255, 215, 0, 0.5);
+    border: 2px solid #ffbf00;
+    transition: all 0.3s ease-in-out;
+    user-select: none;
+    cursor: pointer;
+}
+
+.TicketNum:hover {
+    transform: translateY(-5px) scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6), 0 0 30px rgba(255, 215, 0, 0.8);
+    background: linear-gradient(145deg, #cc0000 0%, #ff0000 100%);
+}
