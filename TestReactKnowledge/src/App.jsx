@@ -1,7 +1,7 @@
 import "./App.css";
 import Lottery from "./Lottery.jsx";
 import Ticket from "./Ticket.jsx";
-import {sum} from "./helper.js";
+import { sum } from "./helper.js";
 
 function App() {
   let winningCondition = (ticket) => {
