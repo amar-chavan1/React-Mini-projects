@@ -2,8 +2,7 @@ import { useEffect, useState } from "react";
 import SearchBox from "./SearchBox";
 import DisplayBox from "./DisplayBox";
 import { Container, Typography } from "@mui/material";
-
-const API_KEY = "8cc26fbe5ba037fcb98f4f709ac7f135";
+const API_KEY = import.meta.env.VITE_API_KEY;
 
 export default function WeatherApp() {
   const [weatherData, setWeatherData] = useState(null);
