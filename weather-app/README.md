@@ -6,7 +6,7 @@ A modern React + Vite-based weather app that uses the OpenWeatherMap API to disp
 
 ## 🚀 Live Demo
 
-🔗 [Click Here to View the Live App]([https://your-vercel-url.vercel.app](https://weather-app-five-theta-41.vercel.app/))  
+🔗 [Click Here to View the Live App] ([https://your-vercel-url.vercel.app](https://weather-app-five-theta-41.vercel.app/)) 
 
 
 ---
