@@ -14,7 +14,6 @@ The purpose of this project is to demonstrate real-world frontend application sk
 - Routing with React Router
 
 ---
-
 ## 🧠 Why `localStorage`?
 
 This app uses `localStorage` for simplicity:
