@@ -40,7 +40,7 @@ This app uses `localStorage` for simplicity:
 ---
 ## 🔗 Live Preview
 
-🚀 Live Demo: [https://protanpass-alpha-six.vercel.app/](https://protanpass-alpha-six.vercel.app/)
+🚀 Live Demo: [https://protonpass-alpha-six.vercel.app/](https://protonpass-alpha-six.vercel.app/)
 
 ---
 ## 📸 Screenshots
