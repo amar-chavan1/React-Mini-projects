@@ -73,12 +73,10 @@ This can be expanded into a full-stack production-grade app:
 ---
 
 ## 🙌 Author
-
 Made with ❤️ by **Amar Chavan**  
 📧 Email: amarchavan96k@gmail.com  
 🔗 GitHub: [@amar-chavan1](https://github.com/amar-chavan1)  
 📱 LinkedIn: [linkedin.com/in/amar-chavan1](https://linkedin.com/in/amar-chavan1)
-
 ---
 
 ## 📃 License
