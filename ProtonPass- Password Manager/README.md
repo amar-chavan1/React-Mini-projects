@@ -3,7 +3,6 @@
 ProtonPass is a **React-based password manager** with a beautiful dark UI, designed to help users **securely store and manage credentials** — all from the browser using `localStorage`.
 
 ---
-
 ## 🎯 Project Purpose
 
 The purpose of this project is to demonstrate real-world frontend application skills like:
