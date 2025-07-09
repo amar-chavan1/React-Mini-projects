@@ -84,8 +84,6 @@ Made with ❤️ by **Amar Chavan**
 ## 📃 License
 
 This project is licensed under the [MIT License](LICENSE).
-
-
 ---
 
 > ⚠️ **Disclaimer**: This project is for **educational and demonstration purposes only**. Do not store real passwords using this application.
