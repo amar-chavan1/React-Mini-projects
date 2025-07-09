@@ -56,7 +56,6 @@ This app uses `localStorage` for simplicity:
 
 
 ---
-
 ## 🌐 Future Scope
 
 This can be expanded into a full-stack production-grade app:
